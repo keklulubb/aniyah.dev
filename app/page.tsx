@@ -66,11 +66,11 @@ export default function Home() {
         <img className="topbar-surface" src="/figma/wireframe8/top-bar.svg" alt="" />
 
         <nav className="top-links" aria-label="Social links">
-          <a className="top-link github-link" href="#github">
+          <a className="top-link github-link" href="https://github.com/keklulubb">
             <img src="/figma/wireframe8/github-button.svg" alt="" />
             <span>GitHub</span>
           </a>
-          <a className="top-link linkedin-link" href="#linkedin">
+          <a className="top-link linkedin-link" href="https://www.linkedin.com/in/aniyah-bohnen/">
             <img src="/figma/wireframe8/linkedin-button.svg" alt="" />
             <span>LinkedIn</span>
           </a>
