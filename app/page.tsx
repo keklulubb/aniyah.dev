@@ -12,9 +12,24 @@ const folderItems: Array<{
   src: string;
   className: string;
 }> = [
-  { key: "projects", label: "projects", src: "/figma/mac-folder-icon.png", className: "projects-folder" },
-  { key: "about", label: "about", src: "/figma/plaid-macbook-folder.png", className: "about-folder" },
-  { key: "contact", label: "contact", src: "/figma/download-1.png", className: "contact-folder" },
+  {
+    key: "projects",
+    label: "projects",
+    src: "/figma/wireframe8/projects-folder.png",
+    className: "projects-folder",
+  },
+  {
+    key: "about",
+    label: "about",
+    src: "/figma/wireframe8/about-folder.png",
+    className: "about-folder",
+  },
+  {
+    key: "contact",
+    label: "contact",
+    src: "/figma/wireframe8/contact-folder.png",
+    className: "contact-folder",
+  },
 ];
 
 const greeting = "hi! i'm aniyah.";
@@ -22,7 +37,6 @@ const greeting = "hi! i'm aniyah.";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
-  const [activeFolder, setActiveFolder] = useState<FolderKey | null>(null);
   const [typedGreeting, setTypedGreeting] = useState("");
 
   useEffect(() => {
@@ -47,44 +61,56 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={`figma-page ${darkMode ? "theme-dark" : ""}`}>
-      <header className="figma-header">
-        <img className="header-miffy" src="/figma/miffy-icon.png" alt="" width={218} height={218} />
-        <div className="utility-controls" aria-label="Site controls">
-          <button className="utility-button utility-empty" type="button" aria-label="Open menu" />
+    <main className={`wireframe8-page ${darkMode ? "theme-dark" : ""}`}>
+      <header className="site-topbar">
+        <img className="topbar-surface" src="/figma/wireframe8/top-bar.svg" alt="" />
+
+        <nav className="top-links" aria-label="Social links">
+          <a className="top-link github-link" href="#github">
+            <img src="/figma/wireframe8/github-button.svg" alt="" />
+            <span>GitHub</span>
+          </a>
+          <a className="top-link linkedin-link" href="#linkedin">
+            <img src="/figma/wireframe8/linkedin-button.svg" alt="" />
+            <span>LinkedIn</span>
+          </a>
+        </nav>
+
+        <div className="top-actions" aria-label="Site controls">
           <button
-            className="utility-button"
+            className="mode-button"
             type="button"
             aria-label="Toggle dark mode"
             aria-pressed={darkMode}
             onClick={() => setDarkMode((current) => !current)}
           >
-            <img src="/figma/mode-icon.svg" alt="" width={33} height={33} />
+            <img src="/figma/wireframe8/sun-icon.svg" alt="" />
           </button>
           <button
-            className={`utility-button ${soundOn ? "is-active" : ""}`}
+            className={`sound-button ${soundOn ? "is-active" : ""}`}
             type="button"
             aria-label="Toggle sound effects"
             aria-pressed={soundOn}
             onClick={() => setSoundOn((current) => !current)}
           >
-            <img src="/figma/volume-icon.svg" alt="" width={33} height={33} />
+            <img src="/figma/wireframe8/speaker-button.svg" alt="" />
           </button>
         </div>
       </header>
 
-      <div className="desktop-layout">
+      <div className="landing-layout">
         <section className="home-window" aria-labelledby="home-title">
           <div className="window-bar">
             <p>home</p>
-            <button className="window-close" type="button" aria-label="Home window controls">[x]</button>
+            <span className="window-close" aria-hidden="true">[x]</span>
           </div>
 
           <div className="home-content">
             <h1 id="home-title" aria-label={greeting}>
-              <span>{typedGreeting.slice(0, 4)}</span>{typedGreeting.slice(4)}
+              {typedGreeting}
               <span className={`typing-cursor ${typedGreeting.length === greeting.length ? "is-done" : ""}`} aria-hidden="true" />
             </h1>
+
             <div className="welcome-copy">
               <p>welcome to my website</p>
               <p>check out what i&apos;ve built, leave some feedback, or take a brief rest.</p>
@@ -92,38 +118,28 @@ export default function Home() {
             </div>
           </div>
 
-          <img className="home-miffy" src="/figma/download-2.png" alt="" width={309} height={309} />
+          <img className="rabbit-image" src="/figma/wireframe8/rabbit.png" alt="A rabbit resting in grass" />
         </section>
 
         <aside className="folder-dock" aria-label="Site sections">
           {folderItems.map((item) => (
-            <button
-              className={`folder-item ${item.className}`}
-              type="button"
-              key={item.key}
-              aria-label={`Open ${item.label}`}
-              onClick={() => setActiveFolder(item.key)}
-            >
+            <a className={`folder-item ${item.className}`} href={`#${item.key}`} key={item.key}>
               <span className="folder-image-wrap">
-                <img src={item.src} alt="" width={195} height={242} />
+                <img src={item.src} alt="" />
               </span>
               <span>{item.label}</span>
-            </button>
+            </a>
           ))}
         </aside>
       </div>
 
       <footer className="figma-footer">
-        <img src="/figma/copyright-icon.svg" alt="" width={24} height={24} />
-        <span>2026 Aniyah Bohnen</span>
-      </footer>
-
-      {activeFolder && (
-        <div className="folder-notice" role="status">
-          <span>{activeFolder} is ready for your content.</span>
-          <button type="button" onClick={() => setActiveFolder(null)} aria-label="Dismiss notification">×</button>
+        <img className="footer-line" src="/figma/wireframe8/footer-line.svg" alt="" />
+        <div className="footer-content">
+          <img src="/figma/wireframe8/copyright.svg" alt="" width={24} height={24} />
+          <span>2026 Aniyah Bohnen</span>
         </div>
-      )}
+      </footer>
     </main>
   );
 }

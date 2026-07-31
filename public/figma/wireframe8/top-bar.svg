@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1375" height="100" viewBox="0 0 1375 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Rectangle 12" filter="url(#filter0_d_0_13)">
+<path d="M0 20C0 8.9543 8.95431 0 20 0H1350C1361.05 0 1370 8.95431 1370 20V75C1370 86.0457 1361.05 95 1350 95H20C8.95432 95 0 86.0457 0 75V20Z" fill="#DAF4FF"/>
+<path d="M20 1H1350C1360.49 1.00001 1369 9.50659 1369 20V75C1369 85.4934 1360.49 94 1350 94H20C9.50659 94 1 85.4934 1 75V20L1.00586 19.5098C1.26588 9.24292 9.67049 1 20 1Z" stroke="black" stroke-width="2"/>
+</g>
+<defs>
+<filter id="filter0_d_0_13" x="0" y="0" width="1375" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="5" dy="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_13"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_13" result="shape"/>
+</filter>
+</defs>
+</svg>
