@@ -13,16 +13,16 @@ const folderItems: Array<{
   className: string;
 }> = [
   {
-    key: "projects",
-    label: "projects",
-    src: "/figma/wireframe8/projects-folder.png",
-    className: "projects-folder",
-  },
-  {
     key: "about",
     label: "about",
     src: "/figma/wireframe8/about-folder.png",
     className: "about-folder",
+  },
+  {
+    key: "projects",
+    label: "projects",
+    src: "/figma/wireframe8/projects-folder.png",
+    className: "projects-folder",
   },
   {
     key: "contact",
@@ -108,7 +108,8 @@ export default function Home() {
           <div className="home-content">
             <h1 id="home-title" aria-label={greeting}>
               {typedGreeting}
-              <span className={`typing-cursor ${typedGreeting.length === greeting.length ? "is-done" : ""}`} aria-hidden="true" />
+              <span className={`typing-cursor`} /> {/* keep the cursor visible at all times */}
+              {/* <span className={`typing-cursor ${typedGreeting.length === greeting.length ? "is-done" : ""}`} aria-hidden="true" /> */}
             </h1>
 
             <div className="welcome-copy">
@@ -118,7 +119,7 @@ export default function Home() {
             </div>
           </div>
 
-          <img className="rabbit-image" src="/figma/wireframe8/rabbit.png" alt="A rabbit resting in grass" />
+          <img className="rabbit-image" src="/figma/wireframe8/kisa.gif" alt="A rabbit resting in grass" />
         </section>
 
         <aside className="folder-dock" aria-label="Site sections">
