@@ -124,7 +124,7 @@ export default function Home() {
 
         <aside className="folder-dock" aria-label="Site sections">
           {folderItems.map((item) => (
-            <a className={`folder-item ${item.className}`} href={`#${item.key}`} key={item.key}>
+            <a className={`folder-item ${item.className}`} href={`/${item.key}`} key={item.key}>
               <span className="folder-image-wrap">
                 <img src={item.src} alt="" />
               </span>
